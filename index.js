@@ -6,6 +6,8 @@ import loglevel from 'loglevel';
 import './db';
 import {loadUsers} from './seedData'
 import usersRouter from './api/users';
+import GenresRouter from './api/genres';
+import TVRouter from './api/tvs';
 
 dotenv.config();
 
@@ -17,7 +19,10 @@ if (process.env.NODE_ENV === 'test') {
 
 if (process.env.SEED_DB === 'true' && process.env.NODE_ENV === 'development') {
   loadUsers();
+  loadMovies();
+  loadTvs();
 }
+
 const errHandler = (err, req, res, next) => {
   /* if the error in development then send stack trace to display whole error,
   if it's in production then just send error message  */
@@ -43,9 +48,26 @@ app.use('/api/movies', moviesRouter);
 
 app.use('/api/users', usersRouter);
 
+app.use('/api/genres', GenresRouter);
+
+app.use('/api/tvs', function(req, res, next) {
+  const isEnabled = req.optimizely.client.isFeatureEnabled(
+    'tv', 
+    'user1',
+    {
+      customerId: 123,
+      isVip: true
+    }
+  )
+
+  if (isEnabled) {
+    next();
+  }
+}, TVRouter);
+
 app.use(errHandler);
 
-let server = app.listen(port, () => {
+const server = app.listen(port, () => {
   loglevel.info(`Server running at ${port}`);
 });
 
