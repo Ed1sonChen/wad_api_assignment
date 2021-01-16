@@ -8,14 +8,6 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getMovieByPage = (page) => {
-    return fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&page=${page}`
-    )
-    .then(res => res.json())
-    .then(json => json.results)
-  }
-
   export const getMovie = id => {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_KEY}`
@@ -52,3 +44,90 @@ export const getMovies = () => {
     .then(res => res.json())
     .then(json => json.results)
   }
+
+  export const getTodayTVs = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/airing_today?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getPopularTVs = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getTopRatedTVs = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getHotTVs = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getTVDetails = (id) => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.TMDB_KEY}&language=en-US`
+    )
+    .then(res => res.json())
+  }
+
+  export const getSimilarTVs = (id) => {
+    return fetch(`https://api.themoviedb.org/3/tv/${id}/similar?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`)
+    .then(res => 
+      res.json()
+    ).then(json => 
+      json.results
+    )
+  }
+
+  export const getTVById = (id) => {
+    return fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.TMDB_KEY}&language=en-US`)
+    .then(res => 
+      res.json()
+    )
+  }
+
+  export const searchTVByPage = (query, page) => {
+    return fetch(`https://api.themoviedb.org/3/search/tv?api_key=${process.env.TMDB_KEY}&language=en-US&page=${page}&query=${query}&include_adult=false`)
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getTodayTvsByPage = (page) => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/airing_today?api_key=${process.env.TMDB_KEY}&language=en-US&page=${page}`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getPopularTVsByPage = (page) => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=${page}`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  export const getTopRatedTVsByPage = (page) => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMDB_KEY}&language=en-US&page=${page}`
+    )
+    .then(res => res.json())
+    .then(json => json.results)
+  }
+
+  
