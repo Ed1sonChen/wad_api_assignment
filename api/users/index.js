@@ -76,6 +76,21 @@ router.put("/:id", (req, res) => {
     .catch(err => next(err));
 });
 
+router.delete('/:username', (req, res, next) => {
+  User.findOneAndDelete({ username: req.params.username }, (err, docs) => {
+    if (err || !docs) {
+      res.status(401).json({
+        code: 401,
+        msg: 'Fail to delete the user'
+      })
+    } else {
+      res.status(200).json({
+        msg: 'Deleted User: ' + docs.username
+      })
+    }
+  })
+})
+
 router.post('/:userName/favourites', (req, res, next) => {
   const newFavourite = req.body;
   const query = {username: req.params.userName};
