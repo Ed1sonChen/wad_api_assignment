@@ -85,7 +85,7 @@ swagger
 
 ![][swagger3]
 
-Link:https://app.swaggerhub.com/apis-docs/waduhex/wad-api-assignment/1.0.0#/
+Link: https://app.swaggerhub.com/apis-docs/waduhex/wad-api-assignment/1.0.0#/
 
 ## Security and Authentication
 Give details of authentication/ security implemented on the API(e.g. passport/sessions). Indicate which routes are protected.
@@ -139,6 +139,10 @@ I build the swagger documentation in the swaggerhub. I implement it with swagger
 
 I used the third-party package helmet to help secure my Express app by setting various HTTP headers.
 
+```js
+const helmet = require('helmet')
+app.use(helmet())
+```
 
 # Assignment 2 - Agile Software Practice.
 
@@ -171,9 +175,16 @@ Name: Zhiling Chen
 | /api/tvs/search/:page            | search the tvs with keywords | N/A                           | N/A                           | N/A                     |
 | /api/genres                      | get all the genres                             | N/A                           | N/A                           | N/A                     |
 
-## Error/Exception Testing.
+swagger
 
-.... From the list of endpoints above, specify those that have error/exceptional test cases in your test code, the relevant test file and the nature of the test case(s), e.g.
+![][swagger1]
+
+![][swagger2]
+
+![][swagger3]
+
+Link: https://app.swaggerhub.com/apis-docs/waduhex/wad-api-assignment/1.0.0#/
+## Error/Exception Testing.
 
 + Post /api/movies - test when the new movie has no title, invalid release date, empty genre list. Test adding a movie without prior authentication. See tests/functional/api/movies/index.js 
 
