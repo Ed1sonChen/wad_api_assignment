@@ -6,19 +6,19 @@ Name: Zhiling Chen
  
  + Feature 1 - Get the movies by page for the react app's pagination functionality. 
  + Feature 2 - Get the upcoming movies by page for the react app's pagination functionality.
- + Feature 3 = Get the now playing movies by page for the react app's pagination functionality.
- + Feature 4 = Get the popular movies by page for the react app's pagination functionality.
- + Feature 5 = Get the top rated movies by page for the react app's pagination functionality.
- + Feature 6 = Get the trending movies by page for the react app's pagination functionality.
- + Feature 7 = Get the recommended movies of a particular movie.
- + Feature 8 = Search movies with keywords.
- + Feature 9 = Get the today's TVs by page for the react app's pagination functionality.
- + Feature 10 = Get the popular TVs by page for the react app's pagination functionality.
- + Feature 11 = Get the top rated TVs by page for the react app's pagination functionality.
- + Feature 12 = Get the hot TVs by page for the react app's pagination functionality.
- + Feature 13 = Get the today's TVs by page for the react app's pagination functionality.
- + Feature 14 = Get the similar TVs of a particular tv.
- + Feature 15 = Search TVs with keywords.
+ + Feature 3 - Get the now playing movies by page for the react app's pagination functionality.
+ + Feature 4 - Get the popular movies by page for the react app's pagination functionality.
+ + Feature 5 - Get the top rated movies by page for the react app's pagination functionality.
+ + Feature 6 - Get the trending movies by page for the react app's pagination functionality.
+ + Feature 7 - Get the recommended movies of a particular movie.
+ + Feature 8 - Search movies with keywords.
+ + Feature 9 - Get the today's TVs by page for the react app's pagination functionality.
+ + Feature 10 - Get the popular TVs by page for the react app's pagination functionality.
+ + Feature 11 - Get the top rated TVs by page for the react app's pagination functionality.
+ + Feature 12 - Get the hot TVs by page for the react app's pagination functionality.
+ + Feature 13 - Get the today's TVs by page for the react app's pagination functionality.
+ + Feature 14 - Get the similar TVs of a particular tv.
+ + Feature 15 - Search TVs with keywords.
  
 ## Installation Requirements
 
@@ -64,18 +64,18 @@ secret=YourJWTSecret
 | /api/movies/trending/:page       | Get trending movies by page                    | N/A                           | N/A                           | N/A                     |
 | /api/movies/:id/recommend      | Get recommend movies of a particular movie                   | N/A                           | N/A                           | N/A                     |
 | /api/movies/search/:query        | Search the movies by query parameter           | N/A                           | N/A                           | N/A                     |
-| /api/users                       | Get all the users                              | Login in the system  | N/A                           | N/A                     |
-| /api/users/:username             | N/A                                            | N/A                           | N/A                           | delete user by username |
-| /api/users/:id                   | N/A                                            | N/A                           | update user information by id | N/A                     |
-| /api/users/:userName/favorites   | get users' favorites movies                    | add favorite movies to user   | N/A                           | N/A                     |
-| /api/tvs/todaytv/page/:page      | get today tvs by page                          | N/A                           | N/A                           | N/A                     |
-| /api/tvs/populartv/page/:page    | get popular tvs by page                        | N/A                           | N/A                           | N/A                     |
-| /api/tvs/topratedtv/page/:page   | get toprated tvs by page                       | N/A                           | N/A                           | N/A                     |
-| /api/tvs/hottv                   | get hot tvs by page                            | N/A                           | N/A                           | N/A                     |
-| /api/tvs/:id                     | get the detailed tv information                | N/A                           | N/A                           | N/A                     |
-| /api/tvs/:id/similar             | get the similar TVs          | N/A                           | N/A                           | N/A                     |
-| /api/tvs/search/:page            | search the tvs with keywords | N/A                           | N/A                           | N/A                     |
-| /api/genres                      | get all the genres                             | N/A                           | N/A                           | N/A                     |
+| /api/users                       | Get all the users                              | Login the system  | N/A                           | N/A                     |
+| /api/users/:username             | N/A                                            | N/A                           | N/A                           | Delete user by username |
+| /api/users/:id                   | N/A                                            | N/A                           | Update user information by id | N/A                     |
+| /api/users/:userName/favorites   | Get users' favorites movies                    | Add favorite movies to user   | N/A                           | N/A                     |
+| /api/tvs/todaytv/page/:page      | Get today tvs by page                          | N/A                           | N/A                           | N/A                     |
+| /api/tvs/populartv/page/:page    | Get popular tvs by page                        | N/A                           | N/A                           | N/A                     |
+| /api/tvs/topratedtv/page/:page   | Get toprated tvs by page                       | N/A                           | N/A                           | N/A                     |
+| /api/tvs/hottv                   | Get hot tvs by page                            | N/A                           | N/A                           | N/A                     |
+| /api/tvs/:id                     | Get the detailed tv information                | N/A                           | N/A                           | N/A                     |
+| /api/tvs/:id/similar             | Get the similar TVs          | N/A                           | N/A                           | N/A                     |
+| /api/tvs/search/:page            | Search the tvs with keywords | N/A                           | N/A                           | N/A                     |
+| /api/genres                      | Get all the genres                             | N/A                           | N/A                           | N/A                     |
 
 swagger
 
@@ -162,18 +162,18 @@ Name: Zhiling Chen
 | /api/movies/trending/:page       | Get trending movies by page                    | N/A                           | N/A                           | N/A                     |
 | /api/movies/:id/recommend      | Get recommend movies of a particular movie                   | N/A                           | N/A                           | N/A                     |
 | /api/movies/search/:query        | Search the movies by query parameter           | N/A                           | N/A                           | N/A                     |
-| /api/users                       | Get all the users                              | Login in the system  | N/A                           | N/A                     |
-| /api/users/:username             | N/A                                            | N/A                           | N/A                           | delete user by username |
-| /api/users/:id                   | N/A                                            | N/A                           | update user information by id | N/A                     |
-| /api/users/:userName/favorites   | get users' favorites movies                    | add favorite movies to user   | N/A                           | N/A                     |
-| /api/tvs/todaytv/page/:page      | get today tvs by page                          | N/A                           | N/A                           | N/A                     |
-| /api/tvs/populartv/page/:page    | get popular tvs by page                        | N/A                           | N/A                           | N/A                     |
-| /api/tvs/topratedtv/page/:page   | get toprated tvs by page                       | N/A                           | N/A                           | N/A                     |
-| /api/tvs/hottv                   | get hot tvs by page                            | N/A                           | N/A                           | N/A                     |
-| /api/tvs/:id                     | get the detailed tv information                | N/A                           | N/A                           | N/A                     |
-| /api/tvs/:id/similar             | get the similar TVs          | N/A                           | N/A                           | N/A                     |
-| /api/tvs/search/:page            | search the tvs with keywords | N/A                           | N/A                           | N/A                     |
-| /api/genres                      | get all the genres                             | N/A                           | N/A                           | N/A                     |
+| /api/users                       | Get all the users                              | Login the system  | N/A                           | N/A                     |
+| /api/users/:username             | N/A                                            | N/A                           | N/A                           | Delete user by username |
+| /api/users/:id                   | N/A                                            | N/A                           | Update user information by id | N/A                     |
+| /api/users/:userName/favorites   | Get users' favorites movies                    | Add favorite movies to user   | N/A                           | N/A                     |
+| /api/tvs/todaytv/page/:page      | Get today tvs by page                          | N/A                           | N/A                           | N/A                     |
+| /api/tvs/populartv/page/:page    | Get popular tvs by page                        | N/A                           | N/A                           | N/A                     |
+| /api/tvs/topratedtv/page/:page   | Get toprated tvs by page                       | N/A                           | N/A                           | N/A                     |
+| /api/tvs/hottv                   | Get hot tvs by page                            | N/A                           | N/A                           | N/A                     |
+| /api/tvs/:id                     | Get the detailed tv information                | N/A                           | N/A                           | N/A                     |
+| /api/tvs/:id/similar             | Get the similar TVs          | N/A                           | N/A                           | N/A                     |
+| /api/tvs/search/:page            | Search the tvs with keywords | N/A                           | N/A                           | N/A                     |
+| /api/genres                      | Get all the genres                             | N/A                           | N/A                           | N/A                     |
 
 swagger
 
@@ -227,14 +227,23 @@ it('should return a 401 status with error message when the movie was added twice
     })
 ```
 
-## Continuous Delivery/Deployment.
++ GET todaytv/page/:page - test when the page is invalid. See /tests/functional/api/tvs/index.js
 
-..... Specify the URLs for the staging and production deployments of your web API, e.g.
+```js
+it('should return the 500 status when page is invalid', () => {
+        return request(api)
+          .get('/api/tvs/todaytv/page/xx')
+          .set('Accept', 'application/json')
+          .expect(500)
+      })
+```
+
+## Continuous Delivery/Deployment.
 
 + https://movies-api-trial-staging.herokuapp.com/ - Staging deployment
 + https://movies-api-production.herokuapp.com/ - Production
 
-.... Show a screenshots from the overview page for the two Heroku apps e,g,
+
 
 + Staging app overview 
 
