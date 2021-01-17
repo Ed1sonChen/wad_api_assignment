@@ -135,7 +135,9 @@ https://github.com/waduhex/wad2-moviesApp
 
 I build the swagger documentation in the swaggerhub. I implement it with swagger.json.
 
+- helmet
 
+I used the third-party package helmet to help secure my Express app by setting various HTTP headers.
 
 
 # Assignment 2 - Agile Software Practice.
