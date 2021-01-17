@@ -115,4 +115,91 @@ describe("Movies endpoint", () => {
     })
   })
 
+  describe('GET /movies/nowplaying/:page', () => {
+    describe('When page is not valid', () => {
+      it('should return the 500 error', () => {
+        return request(api)
+          .get('/api/movies/nowplaying/xx')
+          .set("Accept", "application/json")
+          .set("Authorization", "Bearer " + token)
+          .expect(500);
+      })
+    })
+
+    describe('When page is valid', () => {
+      it('should return the movies', () => {
+        return request(api)
+          .get('/api/movies/nowplaying/2')
+          .set('Accept', 'application/json')
+          .set('Authorization', 'Bearer ' + token)
+          .expect(200)
+      })
+    })
+  })
+
+  describe('GET /movies/popular/:page', () => {
+    describe('When page is not valid', () => {
+      it('should return the 500 error', () => {
+        return request(api)
+          .get('/api/movies/popular/xx')
+          .set("Accept", "application/json")
+          .set("Authorization", "Bearer " + token)
+          .expect(500);
+      })
+    })
+
+    describe('When page is valid', () => {
+      it('should return the movies', () => {
+        return request(api)
+          .get('/api/movies/popular/2')
+          .set('Accept', 'application/json')
+          .set('Authorization', 'Bearer ' + token)
+          .expect(200)
+      })
+    })
+  })
+
+  describe('GET /movies/toprated/:page', () => {
+    describe('When page is not valid', () => {
+      it('should return the 500 error', () => {
+        return request(api)
+          .get('/api/movies/toprated/xx')
+          .set("Accept", "application/json")
+          .set("Authorization", "Bearer " + token)
+          .expect(500);
+      })
+    })
+
+    describe('When page is valid', () => {
+      it('should return the movies', () => {
+        return request(api)
+          .get('/api/movies/toprated/2')
+          .set('Accept', 'application/json')
+          .set('Authorization', 'Bearer ' + token)
+          .expect(200)
+      })
+    })
+  })
+
+  describe('GET /movies/trending/:page', () => {
+    describe('When page is not valid', () => {
+      it('should return the 500 error', () => {
+        return request(api)
+          .get('/api/movies/trending/xx')
+          .set("Accept", "application/json")
+          .set("Authorization", "Bearer " + token)
+          .expect(500);
+      })
+    })
+
+    describe('When page is valid', () => {
+      it('should return the movies', () => {
+        return request(api)
+          .get('/api/movies/trending/2')
+          .set('Accept', 'application/json')
+          .set('Authorization', 'Bearer ' + token)
+          .expect(200)
+      })
+    })
+  })
 });
