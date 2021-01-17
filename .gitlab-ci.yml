@@ -59,7 +59,7 @@ continuous_delivery:
      - deploy_staging
   only:
     - develop
-  stage: deploy
+  stage: production
   before_script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
@@ -75,7 +75,7 @@ continuous_deployment:
      - deploy_staging
   only:
     - master
-  stage: deploy
+  stage: production
   before_script:
     - apt-get update -qy
     - apt-get install -y ruby-dev

@@ -19,7 +19,7 @@ Name: Zhiling Chen
  + Feature 13 - Get the today's TVs by page for the react app's pagination functionality.
  + Feature 14 - Get the similar TVs of a particular tv.
  + Feature 15 - Search TVs with keywords.
- 
+ + Feature 16 - Delete the user.
 ## Installation Requirements
 
 Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB instance, any other 3rd party software not in the package.json). 
@@ -148,6 +148,11 @@ app.use(helmet())
 
 Name: Zhiling Chen
 
+## Explanation
+
+Because I am in China now, many tools like tmdb's api, gitlab, and heroku are not accessible in China, which caused me to fail due to network problems when using these tools. I'm sorry I couldn't complete some parts of the assignment. The picture below is the reason for the failure of CI/CD in my gitlab:
+
+![][error]
 ## Target Web API.
 
 | Name                             | GET                                            | POST                          | PUT                           | DELETE                  |
@@ -266,3 +271,4 @@ it('should return the 500 status when page is invalid', () => {
 [swagger3]: ./public/swagger3.png
 [stagingapp]: ./public/stagingapp.png
 [pruductionapp]: ./public/productionapp.png
+[error]: ./public/error.png
