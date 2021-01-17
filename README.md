@@ -3,15 +3,23 @@
 Name: Zhiling Chen
 
 ## Features.
-
-...... A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** ......,
  
- + Feature 1 - .... a statement of its purpose/objective ..... 
- + Feature 2 - .......
- + Feature 3 = ......
- + etc
- + etc
-
+ + Feature 1 - Get the movies by page for the react app's pagination functionality. 
+ + Feature 2 - Get the upcoming movies by page for the react app's pagination functionality.
+ + Feature 3 = Get the now playing movies by page for the react app's pagination functionality.
+ + Feature 4 = Get the popular movies by page for the react app's pagination functionality.
+ + Feature 5 = Get the top rated movies by page for the react app's pagination functionality.
+ + Feature 6 = Get the trending movies by page for the react app's pagination functionality.
+ + Feature 7 = Get the recommended movies of a particular movie.
+ + Feature 8 = Search movies with keywords.
+ + Feature 9 = Get the today's TVs by page for the react app's pagination functionality.
+ + Feature 10 = Get the popular TVs by page for the react app's pagination functionality.
+ + Feature 11 = Get the top rated TVs by page for the react app's pagination functionality.
+ + Feature 12 = Get the hot TVs by page for the react app's pagination functionality.
+ + Feature 13 = Get the today's TVs by page for the react app's pagination functionality.
+ + Feature 14 = Get the similar TVs of a particular tv.
+ + Feature 15 = Search TVs with keywords.
+ 
 ## Installation Requirements
 
 Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB instance, any other 3rd party software not in the package.json). 
@@ -107,7 +115,7 @@ export const getMovies = () => {
 
 # Assignment 2 - Agile Software Practice.
 
-Name: ... your name ...
+Name: Zhiling Chen
 
 ## Target Web API.
 

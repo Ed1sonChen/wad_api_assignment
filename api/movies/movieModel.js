@@ -34,7 +34,15 @@ const MovieSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Reviews'
   }, {collection: 'movies'}],
-  upcomingPage: {type: Number}
+  upcomingPage: {type: Number},
+  nowplayingPage: {type: Number},
+  popularPage: {type: Number},
+  topratedPage: {type: Number},
+  trendingPage: {type: Number},
+  recommend: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Movies'
+  }],
 });
 
 MovieSchema.statics.findByMovieDBId = function (id) {
