@@ -4,7 +4,7 @@ import moviesRouter from './api/movies';
 import bodyParser from 'body-parser';
 import loglevel from 'loglevel';
 import './db';
-import {loadUsers} from './seedData'
+import {loadUsers, loadMovies, loadTvs} from './seedData'
 import usersRouter from './api/users';
 import GenresRouter from './api/genres';
 import TVRouter from './api/tvs';

@@ -58,6 +58,11 @@ secret=YourJWTSecret
 | /api/movies/page/:page           | Get movies by page                             | N/A                           | N/A                           | N/A                     |
 | /api/movies/:id                  | Get specific movie by id                       | N/A                           | N/A                           | N/A                     |
 | /api/movies/upcoming/:page       | Get upcoming movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/nowplaying/:page       | Get nowplaying movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/popular/:page       | Get popular movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/toprated/:page       | Get top rated movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/trending/:page       | Get trending movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/:id/recommend      | Get recommend movies of a particular movie                   | N/A                           | N/A                           | N/A                     |
 | /api/movies/search/:query        | Search the movies by query parameter           | N/A                           | N/A                           | N/A                     |
 | /api/users                       | Get all the users                              | Login in the system  | N/A                           | N/A                     |
 | /api/users/:username             | N/A                                            | N/A                           | N/A                           | delete user by username |
@@ -68,9 +73,8 @@ secret=YourJWTSecret
 | /api/tvs/topratedtv/page/:page   | get toprated tvs by page                       | N/A                           | N/A                           | N/A                     |
 | /api/tvs/hottv                   | get hot tvs by page                            | N/A                           | N/A                           | N/A                     |
 | /api/tvs/:id                     | get the detailed tv information                | N/A                           | N/A                           | N/A                     |
-| /api/tvs/:id/ratings             | get the specific tv's ratings                  | N/A                           | N/A                           | N/A                     |
 | /api/tvs/:id/similar             | get the similar TVs          | N/A                           | N/A                           | N/A                     |
-| /api/tvs/search/:page            | search the tvs by keyword with page parameters | N/A                           | N/A                           | N/A                     |
+| /api/tvs/search/:page            | search the tvs with keywords | N/A                           | N/A                           | N/A                     |
 | /api/genres                      | get all the genres                             | N/A                           | N/A                           | N/A                     |
 
 If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
@@ -119,14 +123,30 @@ Name: Zhiling Chen
 
 ## Target Web API.
 
-...... Document the Web API that is the target for this assignment's CI/CD pipeline. Include the API's endpoints and any other features relevant to the creation of a suitable pipeline, e.g.
-
-+ Get /api/movies - returns an array of movie objects.
-+ Get /api/movies/:id - returns detailed information on a specific movie.
-+ Put /api/movies/:id - update a specific movie. The request payload includes the some/all of the following movie properties to be updated: title, genre list, release date.
-+ Post /api/movies - add a new movie to the database.
-+ etc.
-+ etc.  
+| Name                             | GET                                            | POST                          | PUT                           | DELETE                  |
+| -------------------------------- | ---------------------------------------------- | ----------------------------- | ----------------------------- | ----------------------- |
+| /api/movies                      | Gets a list of movies                          | N/A                           | N/A                           | N/A                     |
+| /api/movies/page/:page           | Get movies by page                             | N/A                           | N/A                           | N/A                     |
+| /api/movies/:id                  | Get specific movie by id                       | N/A                           | N/A                           | N/A                     |
+| /api/movies/upcoming/:page       | Get upcoming movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/nowplaying/:page       | Get nowplaying movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/popular/:page       | Get popular movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/toprated/:page       | Get top rated movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/trending/:page       | Get trending movies by page                    | N/A                           | N/A                           | N/A                     |
+| /api/movies/:id/recommend      | Get recommend movies of a particular movie                   | N/A                           | N/A                           | N/A                     |
+| /api/movies/search/:query        | Search the movies by query parameter           | N/A                           | N/A                           | N/A                     |
+| /api/users                       | Get all the users                              | Login in the system  | N/A                           | N/A                     |
+| /api/users/:username             | N/A                                            | N/A                           | N/A                           | delete user by username |
+| /api/users/:id                   | N/A                                            | N/A                           | update user information by id | N/A                     |
+| /api/users/:userName/favorites   | get users' favorites movies                    | add favorite movies to user   | N/A                           | N/A                     |
+| /api/tvs/todaytv/page/:page      | get today tvs by page                          | N/A                           | N/A                           | N/A                     |
+| /api/tvs/populartv/page/:page    | get popular tvs by page                        | N/A                           | N/A                           | N/A                     |
+| /api/tvs/topratedtv/page/:page   | get toprated tvs by page                       | N/A                           | N/A                           | N/A                     |
+| /api/tvs/hottv                   | get hot tvs by page                            | N/A                           | N/A                           | N/A                     |
+| /api/tvs/:id                     | get the detailed tv information                | N/A                           | N/A                           | N/A                     |
+| /api/tvs/:id/similar             | get the similar TVs          | N/A                           | N/A                           | N/A                     |
+| /api/tvs/search/:page            | search the tvs with keywords | N/A                           | N/A                           | N/A                     |
+| /api/genres                      | get all the genres                             | N/A                           | N/A                           | N/A                     |
 
 ## Error/Exception Testing.
 

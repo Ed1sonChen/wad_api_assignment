@@ -1,0 +1,936 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "My Movies APP API",
+      "version": "1.0.0",
+      "title": "The Movies APP API Documentation",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "virtserver.swaggerhub.com",
+    "basePath": "/waduhex/wad-api-assignment/1.0.0",
+    "tags": [
+      {
+        "name": "Movies",
+        "description": "API for movies in the system"
+      },
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      },
+      {
+        "name": "TVs",
+        "description": "API for tvs in the system"
+      }
+    ],
+    "schemes": [
+      "https"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/api/movies": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get all movies in system",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movies"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/movies/{id}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get specific movie by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The movie id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/{id}/recommend": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get recommended movies by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The movie id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/movies/search/{query}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Search movie in system",
+          "parameters": [
+            {
+              "name": "search",
+              "in": "path",
+              "description": "The search string",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/upcoming/{page}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get upcoming movies by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The page number",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/nowplaying/{page}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get nowplaying movies by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The page number",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/popular/{page}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get popular movies by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The page number",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/toprated/{page}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get top rated movies by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The page number",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/trendingg/{page}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get trending movies by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The page number",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/movies/page/{page}": {
+        "get": {
+          "tags": [
+            "Movies"
+          ],
+          "summary": "Get movies by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The page number",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Movie"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Not Found this movie"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/users": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Get all users",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Users"
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Register or login with the username and password",
+          "parameters": [
+            {
+              "name": "action",
+              "in": "query",
+              "description": "Choose the type",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "username and password",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/UserAuth"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful login",
+              "schema": {
+                "$ref": "#/definitions/AuthSuccess"
+              }
+            },
+            "201": {
+              "description": "Successful created a user"
+            },
+            "401": {
+              "description": "Authentication failed. Wrong password."
+            }
+          }
+        }
+      },
+      "/api/users/{userName}/favourites": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "add specific user's favourites",
+          "parameters": [
+            {
+              "name": "userName",
+              "in": "path",
+              "description": "The user's name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "movieId",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/MovieId"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Success"
+            },
+            "401": {
+              "description": "The movie has been added to favourites"
+            },
+            "500": {
+              "description": "Error"
+            }
+          },
+          "security": [
+            {
+              "Authorization": []
+            }
+          ]
+        }
+      },
+      "/api/users/{id}": {
+        "put": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Modify the user's info",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The user's id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "user's info",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            },
+            "500": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/api/tvs": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get all tvs in the system",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/api/tvs/todaytv/page/{page}": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get today tvs by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The request page",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "description": "The tv's sort method",
+              "required": false,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      },
+      "/api/tvs/populartv/page/{page}": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get popular tvs by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The request page",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "description": "The tv's sort method",
+              "required": false,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      },
+      "/api/tvs/topratedtv/page/{page}": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get Toprate tvs by page",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "description": "The request page",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "description": "The tv's sort method",
+              "required": false,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      },
+      "/api/tvs/hottv": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get hot tvs by page",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      },
+      "/api/tvs/{id}": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get specific tv by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The request id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      },
+      "/api/tvs/{id}/similar": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get specific tv' similar tvs by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The request id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      },
+      "/api/tvs/search/{page}": {
+        "get": {
+          "tags": [
+            "TVs"
+          ],
+          "summary": "Get specific tv by searching string",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The request id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "The search query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/TV"
+              }
+            },
+            "500": {
+              "description": "ERROR"
+            }
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+      "Authorization": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "definitions": {
+      "Movie": {
+        "properties": {
+          "_id": {
+            "type": "object",
+            "properties": {}
+          },
+          "adult": {
+            "type": "boolean"
+          },
+          "backdrop_path": {
+            "type": "string"
+          },
+          "genres_ids": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "original_language": {
+            "type": "string"
+          },
+          "original_title": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "popularity": {
+            "type": "number"
+          },
+          "poster_path": {
+            "type": "string"
+          },
+          "release_date": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "video": {
+            "type": "boolean"
+          },
+          "vote_average": {
+            "type": "boolean"
+          },
+          "vote_count": {
+            "type": "integer"
+          },
+          "page": {
+            "type": "number"
+          },
+          "upcomingPage": {
+            "type": "number"
+          }
+        }
+      },
+      "Movies": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Movie"
+        }
+      },
+      "TV": {
+        "properties": {
+          "adult": {
+            "type": "boolean"
+          },
+          "backdrop_path": {
+            "type": "string"
+          },
+          "genres_ids": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "original_language": {
+            "type": "string"
+          },
+          "original_title": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "popularity": {
+            "type": "number"
+          },
+          "poster_path": {
+            "type": "string"
+          },
+          "release_date": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "video": {
+            "type": "boolean"
+          },
+          "vote_average": {
+            "type": "boolean"
+          },
+          "vote_count": {
+            "type": "integer"
+          },
+          "todayPage": {
+            "type": "integer"
+          },
+          "popularPage": {
+            "type": "integer"
+          },
+          "topRatedPage": {
+            "type": "integer"
+          },
+          "hot": {
+            "type": "boolean"
+          },
+          "similar": {
+            "type": "string",
+            "description": "TVS"
+          }
+        }
+      },
+      "TVs": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TV"
+        }
+      },
+      "User": {
+        "properties": {
+          "_id": {
+            "type": "object",
+            "properties": {}
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "description": "Should contain upper case char, lower case char and number. The length should be larger than 8"
+          },
+          "favourites": {
+            "$ref": "#/definitions/Movie"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/List"
+            }
+          }
+        }
+      },
+      "Users": {
+        "$ref": "#/definitions/User"
+      },
+      "UserAuth": {
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthSuccess": {},
+      "MovieId": {}
+    }
+  }
