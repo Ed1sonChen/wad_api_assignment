@@ -90,4 +90,22 @@ describe("Users endpoint", () => {
         });
     });
   });
+
+  describe('POST /:username/favourites', () => {
+    beforeEach(() => {
+      request(api)
+        .post('/api/users/user1/favourites')
+        .send({
+          "id": 337041
+        })
+    })
+    it('should return a 401 status with error message when the movie was added twice', () => {
+      request(api)
+        .post('/api/users/user1/favourites')
+        .send({
+          "id": 337041
+        })
+        .expect(401)
+    })
+  })
 });

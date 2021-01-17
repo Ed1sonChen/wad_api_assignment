@@ -186,7 +186,46 @@ swagger
 Link: https://app.swaggerhub.com/apis-docs/waduhex/wad-api-assignment/1.0.0#/
 ## Error/Exception Testing.
 
-+ Post /api/movies - test when the new movie has no title, invalid release date, empty genre list. Test adding a movie without prior authentication. See tests/functional/api/movies/index.js 
++ GET /movies/upcoming/:page - test when the page is not valid, and it will return 500. See tests/functional/api/movies/index.js 
+
+```js
+it('should return the 500 error', () => {
+        return request(api)
+          .get('/api/movies/upcoming/xx')
+          .set("Accept", "application/json")
+          .set("Authorization", "Bearer " + token)
+          .expect(500);
+      })
+```
+
++ GET /movies/:id - test when the movie id is not valid, and it will return not found message. See tests/functional/api/movies/index.js 
+
+```js
+it("should return the NOT found message", () => {
+        return request(api)
+          .get("/api/movies/xxx")
+          .set("Accept", "application/json")
+          .expect("Content-Type", /json/)
+          .expect({
+            success: false,
+            status_code: 34,
+            status_message: "The resource you requested could not be found.",
+          });
+      });
+```
+
++ POST /:username/favourites - test when the movie was added twice. See /tests/functional/api/users/index.js
+
+```js
+it('should return a 401 status with error message when the movie was added twice', () => {
+      request(api)
+        .post('/api/users/user1/favourites')
+        .send({
+          "id": 337041
+        })
+        .expect(401)
+    })
+```
 
 ## Continuous Delivery/Deployment.
 
