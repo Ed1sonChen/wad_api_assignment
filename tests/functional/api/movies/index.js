@@ -3,7 +3,7 @@ import request from "supertest";
 import dotenv from 'dotenv';
 
 const expect = chai.expect;
-dotenv.comfig()
+dotenv.config()
 
 let api;
 let token = "eyJhbGciOiJIUzI1NiJ9.dXNlcjE.FmYria8wq0aFDHnzYWhKQrhF5BkJbFNN1PqNyNQ7V4M"
