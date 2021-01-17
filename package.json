@@ -17,9 +17,10 @@
     "compile:all": "npm-run-all compile:models compile:seed compile:app compile:db compile:copy",
     "postinstall": "rimraf ./build && npm run compile:all",
     "start": "nodemon --exec babel-node index.js",
-    "test": "cross-env NODE_ENV=test mocha "
+    "test": "cross-env NODE_ENV=test mocha ",
+    "start:swagger": "nodemon --exec babel-node app.js"
   },
-  "author": "fxwalsh",
+  "author": "zhiling Chen/20091576",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -42,11 +43,14 @@
     "bcrypt-nodejs": "0.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.3.1",
     "jsonwebtoken": "^8.5.1",
     "loglevel": "^1.7.1",
     "mongoose": "^5.11.5",
     "node-fetch": "^2.6.1",
+    "passport": "^0.4.1",
     "rimraf": "^3.0.0",
+    "swagger-jsdoc": "^6.0.1",
     "swagger-ui-express": "^4.1.6"
   }
 }

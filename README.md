@@ -77,8 +77,15 @@ secret=YourJWTSecret
 | /api/tvs/search/:page            | search the tvs with keywords | N/A                           | N/A                           | N/A                     |
 | /api/genres                      | get all the genres                             | N/A                           | N/A                           | N/A                     |
 
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
+swagger
 
+![][swagger1]
+
+![][swagger2]
+
+![][swagger3]
+
+Link:https://app.swaggerhub.com/apis-docs/waduhex/wad-api-assignment/1.0.0#/
 
 ## Security and Authentication
 Give details of authentication/ security implemented on the API(e.g. passport/sessions). Indicate which routes are protected.
@@ -90,7 +97,19 @@ Give details of authentication/ security implemented on the API(e.g. passport/se
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. Perhaps link to the React App repo and give an example of an API call from React App. For example: 
+I used to use Antd UI to implement the login part, and now I use my own API router to implement the login method .
+
+```js
+export const login = (username, password) => {
+    return fetch('/api/users', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ username: username, password: password })
+    }).then(res => res.json())
+};
+```
 
 ~~~Javascript
 export const getMovies = () => {
@@ -106,13 +125,15 @@ export const getMovies = () => {
 
 ~~~
 
-## Extra features
+The moviesApp url is shown below:
 
-. . Briefly explain any non-standard features, functional or non-functional, developed for the app.  
+https://github.com/waduhex/wad2-moviesApp
 
 ## Independent learning.
 
-. . State the non-standard aspects of React/Express/Node (or other related technologies) that you researched and applied in this assignment . .  
+- swagger ui
+
+I build the swagger documentation in the swaggerhub. I implement it with swagger.json.
 
 
 
@@ -177,5 +198,6 @@ Name: Zhiling Chen
 
 ... Specify the feature(s) in your web API that is/are controlled by a feature flag(s). Mention the source code files that contain the Optimizerly code that implement the flags. Show screenshots (with appropriate captions) from your Optimizely account that prove you successfully configured the flags.
 
-
-[stagingapp]: ./img/stagingapp.png
+[swagger1]: ./public/swagger1.png
+[swagger2]: ./public/swagger2.png
+[swagger3]: ./public/swagger3.png
