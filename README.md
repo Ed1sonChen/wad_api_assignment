@@ -240,10 +240,9 @@ it('should return the 500 status when page is invalid', () => {
 
 ## Continuous Delivery/Deployment.
 
-+ https://movies-api-trial-staging.herokuapp.com/ - Staging deployment
-+ https://movies-api-production.herokuapp.com/ - Production
-
-
++ https://movies-api-assignment2.herokuapp.com - Staging deployment
++ https://assignment2-deploy1.herokuapp.com - Production
++ https://app.swaggerhub.com/apis-docs/waduhex/wad-api-assignment/1.0.0#/ -swagger ducumentation
 
 + Staging app overview 
 
@@ -251,14 +250,19 @@ it('should return the 500 status when page is invalid', () => {
 
 + Production app overview 
 
-[ , , , screenshot here . . . ]
+![][productionapp]
 
-[If an alternative platform to Heroku was used then show the relevant page from that platform's UI.]
+**Swagger overview**
 
-## Feature Flags (If relevant)
+![][swagger1]
 
-... Specify the feature(s) in your web API that is/are controlled by a feature flag(s). Mention the source code files that contain the Optimizerly code that implement the flags. Show screenshots (with appropriate captions) from your Optimizely account that prove you successfully configured the flags.
+![][swagger2]
+
+![][swagger3]
+
 
 [swagger1]: ./public/swagger1.png
 [swagger2]: ./public/swagger2.png
 [swagger3]: ./public/swagger3.png
+[stagingapp]: ./public/stagingapp.png
+[pruductionapp]: ./public/productionapp.png
