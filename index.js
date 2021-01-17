@@ -9,6 +9,7 @@ import usersRouter from './api/users';
 import GenresRouter from './api/genres';
 import TVRouter from './api/tvs';
 
+const helmet = require('helmet')
 dotenv.config();
 
 if (process.env.NODE_ENV === 'test') {
@@ -33,6 +34,8 @@ const errHandler = (err, req, res, next) => {
 };
 
 const app = express();
+
+app.use(helmet())
 
 const port = process.env.PORT ;
 
