@@ -270,5 +270,5 @@ it('should return the 500 status when page is invalid', () => {
 [swagger2]: ./public/swagger2.png
 [swagger3]: ./public/swagger3.png
 [stagingapp]: ./public/stagingapp.png
-[pruductionapp]: ./public/productionapp.png
+[productionapp]: ./public/productionapp.png
 [error]: ./public/error.png
